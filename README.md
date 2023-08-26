@@ -4,8 +4,6 @@ Python/Django backend for helping users retain information long-term by promptin
 
 ## Installation
 
-Carry out the following instructions (if you don't already have them configured):
-
 1. Install an IDE (I have Visual Studio Code from 'https://code.visualstudio.com/')
 2. Install Python (from 'https://www.python.org/downloads/')
 3. Set up a virtual environment and install Django within it (according to the instructions on 'https://docs.djangoproject.com/en/4.2/howto/windows/').
@@ -13,7 +11,7 @@ Carry out the following instructions (if you don't already have them configured)
 5. Fork this repository inside the virtual environment.
 6. From within the folder you created the virtual environment in, run the following inside the terminal:*
    ```bash
-   Scripts\activate.bat
+    Scripts\activate.bat
    ```
    ```python
     py learnway\manage.py runserver

@@ -11,7 +11,7 @@ Carry out the following instructions (if you don't already have them configured)
 3. Set up (and activate) a virtual environment and install Django within it (according to the instructions on 'https://docs.djangoproject.com/en/4.2/howto/windows/').
 4. Set the python interpreter to the 'python.exe' file within the Scripts folder
 5. Fork this repository inside the virtual environment.
-6. Finally:
+6. Finally, run the following inside the terminal:
    ```python
     py manage.py runserver
    ```

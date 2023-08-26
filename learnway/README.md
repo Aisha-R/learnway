@@ -16,6 +16,8 @@ Carry out the following instructions (if you don't already have them configured)
     py manage.py runserver
    ```
 
+## Support
+
 These instructions are specific to Windows, for Unix OS you can try to find similar instructions elsewhere online or open an issue and I'll try to help.
 
 ## Contributing

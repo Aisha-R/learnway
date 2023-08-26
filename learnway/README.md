@@ -1,8 +1,4 @@
-# Title
-
-LearnWay
-
-## Description
+# Learnway
 
 Python/Django backend for helping users retain information long-term by prompting them to review said information periodically. The intervals implemented in this application are based on the information on this site 'https://www.edapp.com/blog/how-spaced-repetition-works/'.
 

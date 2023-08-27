@@ -20,6 +20,5 @@ from django.urls import path, include
 # sets up 'playground/' so that only what follows needs to be specified elsewhere
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('playground/', include('playground.urls'))
+    path('api-auth/', include('rest_framework.urls'))
 ]

@@ -23,6 +23,11 @@ Python/Django backend for helping users retain information long-term by promptin
    ```
 *You have to do this step everytime you open the project.
 
+Backup the database at regular intervals inside a folder (+ place the folder in .gitignore) from the root directory with:
+   ```cmd
+      pg_dump -U learnway -F t <username> > db-backups/<database name>-<backup number>.tar
+   ```
+
 ## Support
 
 These instructions are specific to Windows, for Unix OS you can try to find similar instructions elsewhere online or open an issue and I'll try to help.

@@ -13,6 +13,7 @@ Python/Django backend for helping users retain information long-term by promptin
 7. Sep up the database connection (according to the instructions on 'https://medium.com/@rudipy/how-to-connecting-postgresql-with-a-django-application-f479dc949a11').
 
    i. Make sure to hide your password in an '.env' file (according to the instructions on: 'https://pypi.org/project/python-dotenv/').
+8. Set up DRF (according to the instructions on 'https://www.django-rest-framework.org/#installation').
 9. Run the following inside the terminal:*
    ```cmd
     ..\Scripts\activate.bat

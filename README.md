@@ -4,12 +4,15 @@ Python/Django backend for helping users retain information long-term by promptin
 
 ## Installation
 
-1. Install an IDE (I have Visual Studio Code from 'https://code.visualstudio.com/')
-2. Install Python (from 'https://www.python.org/downloads/')
-3. Set up a virtual environment and install Django within it (according to the instructions on 'https://docs.djangoproject.com/en/4.2/howto/windows/').
-4. Set the python interpreter to the 'python.exe' file within the Scripts folder
-5. Fork this repository inside the virtual environment.
-6. Run the following inside the terminal:*
+1. Install an IDE (I have Visual Studio Code from 'https://code.visualstudio.com/').
+2. Install Python (from 'https://www.python.org/downloads/').
+3. Install Postgresql (from 'https://www.postgresql.org/download/').
+4. Set up a virtual environment and install Django within it (according to the instructions on 'https://docs.djangoproject.com/en/4.2/howto/windows/').
+5. Set the python interpreter to the 'python.exe' file within the Scripts folder.
+6. Fork this repository inside the virtual environment.
+7. Sep up the database connection (according to the instructions on 'https://medium.com/@rudipy/how-to-connecting-postgresql-with-a-django-application-f479dc949a11').
+     i. Make sure to hide your password in an '.env' file (according to the instructions on: 'https://pypi.org/project/python-dotenv/').
+9. Run the following inside the terminal:*
    ```cmd
     ..\Scripts\activate.bat
    ```

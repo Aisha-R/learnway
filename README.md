@@ -11,7 +11,8 @@ Python/Django backend for helping users retain information long-term by promptin
 5. Set the python interpreter to the 'python.exe' file within the Scripts folder.
 6. Fork this repository inside the virtual environment.
 7. Sep up the database connection (according to the instructions on 'https://medium.com/@rudipy/how-to-connecting-postgresql-with-a-django-application-f479dc949a11').
-     i. Make sure to hide your password in an '.env' file (according to the instructions on: 'https://pypi.org/project/python-dotenv/').
+
+        i. Make sure to hide your password in an '.env' file (according to the instructions on: 'https://pypi.org/project/python-dotenv/').
 9. Run the following inside the terminal:*
    ```cmd
     ..\Scripts\activate.bat

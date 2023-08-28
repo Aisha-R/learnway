@@ -1,16 +1,15 @@
 from django.db import models
-from django.utils.timezone import datetime, timedelta
+from django.utils import timezone
 
 class Item(models.Model):
     title = models.CharField(max_length=256)
     description = models.TextField(blank=True)
     init_date = models.DateField(auto_now_add=True)
 
-    def calculate_next_date(init_date):
-        date = datetime.strptime(init_date, '%y-%m-%d')                    
-        return date + timedelta(days=1)
+    def calculate_next_date():                   
+        return timezone.now() + timezone.timedelta(days=1)
 
-    next_date = models.DateField(default=calculate_next_date)
+    next_date = models.DateField(default=calculate_next_date, editable=False)
 
     class Stage(models.IntegerChoices):
         INITIAL = 0
@@ -21,8 +20,9 @@ class Item(models.Model):
 
     stage = models.IntegerField(
         choices=Stage.choices,
-        default=Stage.INITIAL
+        default=Stage.INITIAL,
+        editable=False
     )
 
     def __str__(self):
-        return "{} - {} - ({}) @ {} --> {}".format(self.title, self.description, self.stage, self.init_date, self.next_date)
+        return "{} / {} / AT STAGE {} / BEGUN ON {} / NEXT REVISION DUE ON {}".format(self.title, self.description, self.stage, self.init_date, self.next_date)

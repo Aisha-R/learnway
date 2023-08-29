@@ -36,6 +36,10 @@ Backup the database at regular intervals inside a folder (+ place the folder in 
 
 These instructions are specific to Windows, for Unix OS you can try to find similar instructions elsewhere online or open an issue and I'll try to help.
 
+## Roadmap
+
+The aim of this project is to learn how to use Django and thereafter secure a job as a python backend developer. I will be deploying this in the next couple of days and will implement testing shortly before or after that, time permitting. For prospective employers, if you would like to set me a task to complete or a feature to add as part of the application process feel free to do so.
+
 ## Contributing
 
 For any changes, please open an issue first to discuss what you would like to add or change.

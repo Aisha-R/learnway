@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from users.models import CustomUser
 
 class Item(models.Model):
     title = models.CharField(max_length=256)
@@ -24,5 +25,13 @@ class Item(models.Model):
         editable=False
     )
 
+    user = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        related_name='items',
+        blank=False,
+        null=False
+    )
+
     def __str__(self):
-        return "{} / {} / AT STAGE {} / BEGUN ON {} / NEXT REVISION DUE ON {}".format(self.title, self.description, self.stage, self.init_date, self.next_date)
+        return "{} / {} / AT STAGE {} / BEGUN ON {} / NEXT REVISION DUE ON {} by {}".format(self.title, self.description, self.stage, self.init_date, self.next_date, self.user)

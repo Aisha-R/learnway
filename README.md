@@ -1,6 +1,6 @@
 # LearnWay
 
-Python/Django backend for helping users retain information long-term by prompting them to review said information periodically. The intervals implemented in this application are based on the information on this site 'https://www.edapp.com/blog/how-spaced-repetition-works/'.
+Django backend application for helping users retain information long-term by prompting them to review said information periodically. The intervals implemented in this application are based on the information on this site 'https://www.edapp.com/blog/how-spaced-repetition-works/'.
 
 ## Installation
 
@@ -38,7 +38,9 @@ These instructions are specific to Windows, for Unix OS you can try to find simi
 
 ## Roadmap
 
-The aim of this project is to learn how to use Django and thereafter secure a job as a python backend developer. I will be deploying this in the next couple of days and will implement testing shortly before or after that, time permitting. For prospective employers, if you would like to set me a task to complete or a feature to add as part of the application process feel free to do so.
+The aim of this project is to learn how to use Django and thereafter secure a job as a python backend developer. Short-term goal is to produce a minimally viable product complete with testing, before I move on to implementing additional features. Ordinarily I would take a TDD approach, but for the purposes of learning Django I will get the basics down before I start testing.
+
+For prospective employers, if you would like to set me a task to complete or a feature to add as part of the application process feel free to do so.
 
 ## Contributing
 

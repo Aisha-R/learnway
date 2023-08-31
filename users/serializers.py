@@ -61,3 +61,9 @@ class CustomUserRegisterSerializer(serializers.ModelSerializer):
         user.save()
         
         return user
+    
+class CustomUserReadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = "__all__"
+        depth = 1

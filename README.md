@@ -13,14 +13,14 @@ Django backend application for helping users retain information long-term by pro
 
    ii. Run the following in the terminal:
       ```python
-       py -m venv <project-name>
+       python -m venv <project-name>
       ```
       ```cmd
        <project-name>\Scripts\activate.bat
       ```
 5. Run the following in the terminal within the virtual environment:
    ```python
-    py -m pip install Django
+    python -m pip install Django
    ```
    ```cmd
     pip install django psycopg2
@@ -30,16 +30,28 @@ Django backend application for helping users retain information long-term by pro
     pip install django-filter
     pip install djangorestframework-simplejwt
    ```
-5. Set the python interpreter to the 'python.exe' file within the Scripts folder.
+6. Set the python interpreter to the 'python.exe' file within the Scripts folder.
 7. Fork this repository inside the virtual environment.
-8. Set up the database connection (according to the instructions on 'https://medium.com/@rudipy/how-to-connecting-postgresql-with-a-django-application-f479dc949a11').
+8. Set up the database:
+
+   i. Create PostgreSQL user and database (with user as owner/all privileges granted).
+
+   ii. Within the virtual environment, run the following:
+      ```python
+       python manage.py makemigrations
+       python manage.py migrate
+       python manage.py createsuperuser
+       python manage.py runserver
+      ```
+
+   iii. Access 'http://127.0.0.1:8000/admin/' and login using the credentials you just created.
 
 *Everytime you open the project you have to activate the virtual environment inside the terminal before you can start the server:
    ```cmd
     ..\Scripts\activate.bat
    ```
    ```python
-    py manage.py runserver
+    python manage.py runserver
    ```
 
 Backup the database at regular intervals from the root directory with:

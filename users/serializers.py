@@ -62,7 +62,7 @@ class CustomUserRegisterSerializer(serializers.ModelSerializer):
         
         return user
     
-class CustomUserReadSerializer(serializers.ModelSerializer):
+class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = "__all__"

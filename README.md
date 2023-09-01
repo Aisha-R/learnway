@@ -8,15 +8,21 @@ Django backend application for helping users retain information long-term by pro
 2. Install Python (from 'https://www.python.org/downloads/').
 3. Install Postgresql (from 'https://www.postgresql.org/download/').
 4. Set up a virtual environment and activate it:
+
    i. Navigate to the folder you want to create your project within.
+
    ii. Run the following in the terminal:
-      ```cmd
+      ```python
        py -m venv <project-name>
+      ```
+      ```cmd
        <project-name>\Scripts\activate.bat
       ```
 5. Run the following in the terminal within the virtual environment:
-   ```cmd
+   ```python
     py -m pip install Django
+   ```
+   ```cmd
     pip install django psycopg2
     pip install python-dotenv
     pip install djangorestframework
@@ -38,7 +44,7 @@ Django backend application for helping users retain information long-term by pro
 
 Backup the database at regular intervals from the root directory with:
    ```cmd
-      pg_dump -U learnway -F t <username> > db-backups/<database name>-<backup number>.tar
+    pg_dump -U learnway -F t <username> > db-backups/<database name>-<backup number>.tar
    ```
 
 ## Support

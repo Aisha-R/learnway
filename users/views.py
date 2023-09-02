@@ -1,6 +1,6 @@
 from rest_framework import generics
 from django.contrib.auth import get_user_model
-from users.serializers import CustomUserRegisterSerializer, CustomUserSerializer
+from users.serializers import CustomUserRegisterSerializer, CustomUserSerializer, PasswordChangeSerializer
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from users.models import CustomUser
@@ -43,3 +43,9 @@ class CustomUserDeleteView(generics.DestroyAPIView):
 
     serializer_class = CustomUserSerializer
     queryset = CustomUser.objects.all()
+
+class CustomUserPasswordChangeView(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated, IsCreator]
+    
+    queryset = CustomUser.objects.all()
+    serializer_class = PasswordChangeSerializer

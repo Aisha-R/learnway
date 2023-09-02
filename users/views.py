@@ -37,3 +37,9 @@ class CustomUserListView(LoginRequiredMixin, UserPassesTestMixin, ListAPIView):
 
     serializer_class = CustomUserSerializer
     queryset = CustomUser.objects.all()
+
+class CustomUserDeleteView(generics.DestroyAPIView):
+    permission_classes = [IsAuthenticated, IsCreator]
+
+    serializer_class = CustomUserSerializer
+    queryset = CustomUser.objects.all()

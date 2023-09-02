@@ -41,3 +41,9 @@ class ItemDeleteView(generics.DestroyAPIView):
 
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
+
+class ItemUpdateView(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated, IsCreator]
+    
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer

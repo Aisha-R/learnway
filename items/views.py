@@ -35,3 +35,9 @@ class ItemRegisterView(generics.CreateAPIView):
         kwargs['user'] = self.request.user
         super().create(request, *args, **kwargs)
         return Response(request.data, status=status.HTTP_201_CREATED)
+    
+class ItemDeleteView(generics.DestroyAPIView):
+    permission_classes = [IsAuthenticated, IsCreator]
+
+    serializer_class = ItemSerializer
+    queryset = Item.objects.all()

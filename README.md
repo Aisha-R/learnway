@@ -65,9 +65,9 @@ These instructions are specific to Windows, for Unix OS you can try to find simi
 
 ## Roadmap
 
-The aim of this project is to learn how to use Django and thereafter secure a job as a Python Backend Developer. The short-term goal is to produce a minimally viable product complete with testing, before I move on to implementing additional features. Ordinarily I would take a TDD approach, but for the purposes of learning Django I will get the basics down before I start testing.
+The aim of this project is to learn how to use Django and thereafter secure a job as a Python Backend Developer. The short-term goal is to produce a minimum viable product complete with testing, before I move on to implementing additional features. Ordinarily I would take a TDD approach, but for the purposes of learning Django I will get the basics down before I start testing.
 
-For prospective employers, if you would like to set me a task to complete or a feature to add as part of the application process feel free to do so.
+For prospective employers, if you would like to set me a task to complete or a feature to add as part of the job application process feel free to do so.
 
 ## Contributing
 

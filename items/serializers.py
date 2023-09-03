@@ -5,7 +5,7 @@ class ItemSerializer(serializers.ModelSerializer):
     title = serializers.CharField(
         required = True
     )
-
+    
     description= serializers.CharField(
         required = True
     )
@@ -14,8 +14,8 @@ class ItemSerializer(serializers.ModelSerializer):
         default = serializers.CurrentUserDefault()
     )
 
-    init_date = serializers.HiddenField(
-        default = serializers.DateTimeField
+    init_date = serializers.DateTimeField(
+        read_only = True
     )
 
     class Meta:

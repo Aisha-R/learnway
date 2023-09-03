@@ -3,14 +3,25 @@ from django.utils import timezone
 from users.models import CustomUser
 
 class Item(models.Model):
-    title = models.CharField(max_length=256)
-    description = models.TextField(blank=True)
-    init_date = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(
+        max_length=256
+    )
+
+    description = models.TextField(
+        blank=True
+    )
+
+    init_date = models.DateTimeField(
+        auto_now_add=True
+    )
 
     def calculate_next_date():                   
         return timezone.now() + timezone.timedelta(days=1)
 
-    next_date = models.DateTimeField(default=calculate_next_date, editable=False)
+    next_date = models.DateTimeField(
+        default=calculate_next_date,
+        editable=False
+    )
 
     class Stage(models.IntegerChoices):
         INITIAL = 0

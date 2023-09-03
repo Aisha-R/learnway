@@ -1,5 +1,4 @@
-from rest_framework import serializers
-from rest_framework.validators import UniqueValidator
+from rest_framework import serializers, validators
 from users.models import CustomUser
 from django.contrib.auth.password_validation import validate_password
 
@@ -7,7 +6,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
         required = True,
         validators = [
-            UniqueValidator(
+            validators.UniqueValidator(
                 queryset=CustomUser.objects.all()
             )
         ]
@@ -44,23 +43,19 @@ class CustomUserSerializer(serializers.ModelSerializer):
             )
         return attrs
 
-    def update(self, instance, validated_data):
-
-        instance.set_password(validated_data['password'])
-
-        instance.save()
-
-        return instance
+    def update(self, user, validated_data):
+        user.set_password(
+            validated_data['password']
+        )
+        user.save()
+        return user
     
     def create(self, validated_data):
         user = CustomUser.objects.create_user(
             email = validated_data["email"],
         )
-
         user.set_password(
             validated_data["password"]
         )
-
         user.save()
-        
         return user

@@ -7,6 +7,17 @@ from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDe
 from rest_framework.permissions import IsAuthenticated
 from users.permissions import IsCreator
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from items import serializers, models
+
+class CustomUserItemListView(ListAPIView):
+    permission_classes = [IsAuthenticated]
+
+    serializer_class = serializers.ItemSerializer
+    queryset = models.Item.objects.all()
+    
+    def get_queryset(self):
+        return models.Item.objects.filter(user=self.request.user)
+    
 
 class CustomUserCreateView(CreateAPIView):
     

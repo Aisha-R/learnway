@@ -1,33 +1,23 @@
-from rest_framework import generics
 from django.contrib.auth import get_user_model
-from users.serializers import CustomUserRegisterSerializer, CustomUserSerializer, PasswordChangeSerializer
+from users.serializers import CustomUserSerializer
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from users.models import CustomUser
-from rest_framework.generics import RetrieveAPIView, ListAPIView
-from rest_framework.permissions import IsAuthenticated, BasePermission
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.permissions import IsAuthenticated
 from users.permissions import IsCreator
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
-class CustomUserRegisterView(generics.CreateAPIView):
+class CustomUserCreateView(CreateAPIView):
     
     model = get_user_model()
-    serializer_class = CustomUserRegisterSerializer
-    permission_classes = [
-        permissions.AllowAny
-    ]
+    serializer_class = CustomUserSerializer
+    permission_classes = [permissions.AllowAny]
 
     def create(self, request, *args, **kwargs):
         super().create(request, *args, **kwargs)
         return Response(status=status.HTTP_201_CREATED)
-
-class CustomUserView(BasePermission, RetrieveAPIView):
     
-    permission_classes = [IsAuthenticated, IsCreator]
-    
-    serializer_class = CustomUserSerializer
-    queryset = CustomUser.objects.all()
-
 class CustomUserListView(LoginRequiredMixin, UserPassesTestMixin, ListAPIView):
     login_url = '/admin/'
     redirect_field_name = 'redirect_to'
@@ -38,14 +28,8 @@ class CustomUserListView(LoginRequiredMixin, UserPassesTestMixin, ListAPIView):
     serializer_class = CustomUserSerializer
     queryset = CustomUser.objects.all()
 
-class CustomUserDeleteView(generics.DestroyAPIView):
-    permission_classes = [IsAuthenticated, IsCreator]
-
-    serializer_class = CustomUserSerializer
-    queryset = CustomUser.objects.all()
-
-class CustomUserPasswordChangeView(generics.UpdateAPIView):
+class CustomUserView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated, IsCreator]
     
     queryset = CustomUser.objects.all()
-    serializer_class = PasswordChangeSerializer
+    serializer_class = CustomUserSerializer

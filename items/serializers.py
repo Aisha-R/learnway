@@ -18,6 +18,10 @@ class ItemSerializer(serializers.ModelSerializer):
         read_only = True
     )
 
+    stage = serializers.ChoiceField(
+        choices = Item.Stage
+    )
+
     class Meta:
         model = Item
         fields = "__all__"

@@ -14,6 +14,14 @@ class ItemCreateView(generics.CreateAPIView):
     def create(self, request, *args, **kwargs):
         kwargs['user'] = self.request.user
         super().create(request, *args, **kwargs)
+        
+        if ("stage" in request.data):
+            result = {
+                "stage": Item.Stage.INITIAL,
+                **request.data
+            }
+            result['stage'][0] = Item.Stage.INITIAL
+        
         return Response(request.data, status=status.HTTP_201_CREATED)
 
 class ItemView(generics.RetrieveUpdateDestroyAPIView):

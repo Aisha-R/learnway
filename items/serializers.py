@@ -19,6 +19,7 @@ class ItemSerializer(serializers.ModelSerializer):
     )
 
     stage = serializers.ChoiceField(
+        required = False,
         choices = Item.Stage
     )
 
@@ -28,5 +29,6 @@ class ItemSerializer(serializers.ModelSerializer):
         depth = 1
 
     def create(self, data):
+        data["stage"] = Item.Stage.INITIAL
         item = Item.objects.create(**data)
         return item

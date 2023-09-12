@@ -18,20 +18,12 @@ Django backend application for helping users retain information long-term by pro
       ```cmd
        <project-name>\Scripts\activate.bat
       ```
-5. Run the following in the terminal within the virtual environment:
-   ```python
-    python -m pip install Django
-   ```
+5. Set the python interpreter to the 'python.exe' file within the Scripts folder.
+6. Fork this repository inside the virtual environment.
+7. Run the following in the terminal within the virtual environment:
    ```cmd
-    pip install django psycopg2
-    pip install python-dotenv
-    pip install djangorestframework
-    pip install markdown
-    pip install django-filter
-    pip install djangorestframework-simplejwt
+    pip install -r requirements.txt
    ```
-6. Set the python interpreter to the 'python.exe' file within the Scripts folder.
-7. Fork this repository inside the virtual environment.
 8. Set up the database:
 
    i. Create PostgreSQL user and database (with user as owner/all privileges granted).
